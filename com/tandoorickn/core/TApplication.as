@@ -9,7 +9,8 @@ package com.tandoorickn.core
 	{
 		protected var _facade		:AbstractFacade;
 		
-		public var 	appName			:String;
+		public var 	appName			:String,
+					flashvars		:Object;
 		
 		public function TApplication(name:String = "Tandoori AS3 Application")
 		{
@@ -20,6 +21,7 @@ package com.tandoorickn.core
 		
 		protected function onStage(e:Event):void
 		{
+			flashvars = this.stage.root.loaderInfo.parameters;
 			init();
 		}
 		
