@@ -1,0 +1,1 @@
+﻿package com.tandoorickn.services.io.dom.interfaces{	public interface IDomResource	{		function get type():String;				function get content():*;				function get name():String;	}}
