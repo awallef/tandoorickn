@@ -34,7 +34,7 @@ package com.tandoorickn.services.io.rpc.dao
 
 			if(parameters)
 			{
-				var variables = new URLVariables();
+				var variables:URLVariables = new URLVariables();
 				for(var i:uint = 0; i < parameters[0].length; i++) variables[parameters[0][i]] = parameters[1][i];
 				request.data = variables;
 			}

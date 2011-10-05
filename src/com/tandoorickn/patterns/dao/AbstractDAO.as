@@ -24,15 +24,15 @@ package com.tandoorickn.patterns.dao
 			this.type = type;
 		}
 		
-		public function get externalSuccessResponder():Function			{ return _externalSuccessResponder; }
+		public function get externalSuccessResponder():Function				{ return _externalSuccessResponder; }
 		
-		public function set externalSuccessResponder(value:Function)	{ _externalSuccessResponder = value; }
+		public function set externalSuccessResponder(value:Function):void 	{ _externalSuccessResponder = value; }
 		
-		public function get externalErrorResponder():Function			{ return _externalErrorResponder; }
+		public function get externalErrorResponder():Function				{ return _externalErrorResponder; }
 		
-		public function set externalErrorResponder(value:Function)		{ _externalErrorResponder = value; }
+		public function set externalErrorResponder(value:Function):void		{ _externalErrorResponder = value; }
 		
-		public function get isConnected():Boolean						{ return false; }
+		public function get isConnected():Boolean							{ return false; }
 		
 		
 		public function call(method:String,parameters:Array = null):Function
