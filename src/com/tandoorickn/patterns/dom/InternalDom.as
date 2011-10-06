@@ -1,6 +1,7 @@
 package com.tandoorickn.patterns.dom
 {
 	import com.tandoorickn.patterns.style.StyleSheetManager;
+	import com.tandoorickn.ui.css.CssLayout;
 	import com.tandoorickn.ui.css.CssSprite;
 	import com.tandoorickn.ui.css.CssStage;
 	import com.tandoorickn.ui.css.CssStyleSheet;
@@ -12,7 +13,8 @@ package com.tandoorickn.patterns.dom
 		
 		private var		_tree			:Object,
 						_stage			:CssStage,
-						_style			:StyleSheetManager;
+						_style			:StyleSheetManager,
+						_layout			:CssLayout;
 		
 		public function InternalDom()
 		{
@@ -26,6 +28,10 @@ package com.tandoorickn.patterns.dom
 		
 		public function get cssStage():CssStage						{ return _stage; }
 		
+		public function set cssLayout(value:CssLayout):void			{ _layout = value; }
+		
+		public function get cssLayout():CssLayout					{ return _layout; }
+		
 		public function addStyleSheet(name:String, sheet:CssStyleSheet, andRefresh:Boolean = true ):void
 		{
 			_style.addSytleSheet(name,sheet);
@@ -36,6 +42,7 @@ package com.tandoorickn.patterns.dom
 		{
 			for(var i:String in _tree) _style.setStyleForElement(	_tree[i] );	
 			if(_stage) _stage.refresh();
+			if(_layout) _layout.refresh();
 		}
 		
 		public function registerDomElement(cssSprite:CssSprite):CssSprite
