@@ -52,6 +52,11 @@ package com.tandoorickn.patterns.dao
 		
 		protected function nativeErrorResponder(response:*):void
 		{
+			
+			
+			Log.warn("AbstractDAO","nativeErrorResponder ->",response);
+			
+			
 			var error:TandooriError;
 			
 			if(response is TandooriError) error = response;

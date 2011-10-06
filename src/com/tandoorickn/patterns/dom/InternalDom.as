@@ -14,11 +14,12 @@ package com.tandoorickn.patterns.dom
 		private var		_tree			:Object,
 						_stage			:CssStage,
 						_style			:StyleSheetManager,
-						_layout			:CssLayout;
+						_containers		:Object;
 		
 		public function InternalDom()
 		{
 			_tree = {};
+			_containers = {};
 			_style = new StyleSheetManager();
 		}
 		
@@ -28,9 +29,9 @@ package com.tandoorickn.patterns.dom
 		
 		public function get cssStage():CssStage						{ return _stage; }
 		
-		public function set cssLayout(value:CssLayout):void			{ _layout = value; }
+		public function get containers():Object						{ return _containers; }
 		
-		public function get cssLayout():CssLayout					{ return _layout; }
+		public function set containers(value:Object):void 			{ containers = value; }
 		
 		public function addStyleSheet(name:String, sheet:CssStyleSheet, andRefresh:Boolean = true ):void
 		{
@@ -41,8 +42,8 @@ package com.tandoorickn.patterns.dom
 		public function refresh():void
 		{
 			for(var i:String in _tree) _style.setStyleForElement(	_tree[i] );	
+			for( i in containers ) containers[i].refresh();
 			if(_stage) _stage.refresh();
-			if(_layout) _layout.refresh();
 		}
 		
 		public function registerDomElement(cssSprite:CssSprite):CssSprite

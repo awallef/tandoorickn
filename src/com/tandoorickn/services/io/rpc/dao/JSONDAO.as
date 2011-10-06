@@ -17,7 +17,7 @@ package com.tandoorickn.services.io.rpc.dao
 		override protected function onComplete(event:Event):void
 		{
 			try {
-				var jsonDecoder:JSONDecoder = new JSONDecoder(_loader.data);
+				var jsonDecoder:JSONDecoder = new JSONDecoder(_loader.data,false);
 				var result:Object = jsonDecoder.getValue();
 				externalSuccessResponder(result);
 				
