@@ -1,5 +1,6 @@
 package com.tandoorickn.ui.css
 {
+	import com.tandoorickn.debug.Log;
 	import com.tandoorickn.ui.css.core.CoreCssStyle;
 
 	public class CssStyleSheet
@@ -29,6 +30,8 @@ package com.tandoorickn.ui.css
 		
 		public function retrieveStyle(classOrId:String):CoreCssStyle
 		{
+			//Log.debug("stylesheet",_styles[classOrId]);
+			
 			return (_styles[classOrId])? _styles[classOrId] : null;
 		}
 	}

@@ -1,5 +1,7 @@
 package com.tandoorickn.patterns.style
 {
+	import com.tandoorickn.debug.Log;
+	import com.tandoorickn.interfaces.ui.css.ICssSprite;
 	import com.tandoorickn.patterns.facade.AbstractFacade;
 	import com.tandoorickn.ui.css.CssSprite;
 	import com.tandoorickn.ui.css.CssStyleSheet;
@@ -30,11 +32,15 @@ package com.tandoorickn.patterns.style
 			if(index != -1) _sheetOrder.splice(index,1);
 		}
 		
-		public function setStyleForElement(cssSprite:CssSprite):void
+		public function setStyleForElement(cssSprite:ICssSprite):void
 		{
+			
 			var mergedCssStyle:CoreCssStyle = new CoreCssStyle();
 			for(var i:uint = 0; i < cssSprite.classes.length; i++)
+			{
 				mergedCssStyle.merge( this.retrieveStyle(cssSprite.classes[i]).cloneAsObject() );
+				//Log.debug("setStyleForElement",i,cssSprite.classes[i],mergedCssStyle.backgroundColor);
+			}
 			
 			mergedCssStyle.merge( this.retrieveStyle(cssSprite.id).cloneAsObject() );
 			cssSprite.style = mergedCssStyle;

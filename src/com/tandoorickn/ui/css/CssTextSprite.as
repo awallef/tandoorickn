@@ -3,17 +3,17 @@ package com.tandoorickn.ui.css
 	import com.tandoorickn.interfaces.ui.css.ICssSprite;
 	import com.tandoorickn.ui.css.core.CoreCssSprite;
 	import com.tandoorickn.ui.css.core.CoreCssStyle;
+	import com.tandoorickn.ui.css.core.CoreCssTextSprite;
 	import com.tandoorickn.utils.random.RandomChar;
 	
-	public class CssSprite extends CoreCssSprite implements ICssSprite
+	public class CssTextSprite extends CoreCssTextSprite implements ICssSprite
 	{
-		
 		private var _classes			:Array,
 					_id					:String;
-					
+		
 		private var _childIndex			:uint;
 		
-		public function CssSprite(id:String = null, classes:Array = null, css:CoreCssStyle=null, overCss:Object=null)
+		public function CssTextSprite(id:String = null, classes:Array = null, css:CoreCssStyle=null, overCss:Object=null)
 		{
 			super(css, overCss);
 			

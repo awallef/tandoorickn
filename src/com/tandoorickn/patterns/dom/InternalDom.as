@@ -1,5 +1,6 @@
 package com.tandoorickn.patterns.dom
 {
+	import com.tandoorickn.interfaces.ui.css.ICssSprite;
 	import com.tandoorickn.patterns.style.StyleSheetManager;
 	import com.tandoorickn.ui.css.CssLayout;
 	import com.tandoorickn.ui.css.CssSprite;
@@ -46,13 +47,13 @@ package com.tandoorickn.patterns.dom
 			if(_stage) _stage.refresh();
 		}
 		
-		public function registerDomElement(cssSprite:CssSprite):CssSprite
+		public function registerDomElement(cssSprite:ICssSprite):ICssSprite
 		{
 			_tree[cssSprite.id] = cssSprite;
 			return cssSprite;
 		}
 		
-		public function retrieveDomElement(id:String):CssSprite
+		public function retrieveDomElement(id:String):ICssSprite
 		{
 			return (_tree[id])? _tree[id] : null;
 		}
