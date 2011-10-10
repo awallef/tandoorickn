@@ -10,5 +10,10 @@ package com.tandoorickn.utils.types
 			
 			return output;
 		}
+		
+		public static function merge(object1:Object,object2:Object):void
+		{
+			for( var i:String in object2)  object1[i] = object2[i];
+		}
 	}
 }

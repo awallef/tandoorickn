@@ -1,8 +1,7 @@
 package com.tandoorickn.ui.css
 {
 	import com.tandoorickn.debug.Log;
-	import com.tandoorickn.ui.css.core.CoreCssStyle;
-
+	
 	public class CssStyleSheet
 	{
 		protected var 	_styles				:Object,
@@ -23,15 +22,13 @@ package com.tandoorickn.ui.css
 			return _name;
 		}
 					
-		public function registerStyle(classOrId:String, style:CoreCssStyle):void
+		public function registerStyle(classOrId:String, style:Object):void
 		{
 			_styles[classOrId] = style;
 		}
 		
-		public function retrieveStyle(classOrId:String):CoreCssStyle
+		public function retrieveStyle(classOrId:String):Object
 		{
-			//Log.debug("stylesheet",_styles[classOrId]);
-			
 			return (_styles[classOrId])? _styles[classOrId] : null;
 		}
 	}
